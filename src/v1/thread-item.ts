@@ -28,19 +28,19 @@ export class ThreadItem extends Resource {
       hash.text = json.text;
     }
     if (hash.type === 'media') {
-      var directMedia = {};
-      directMedia.mediaType = json.media.media_type;
-      directMedia.images = json.media.image_versions2 ? json.media.image_versions2.candidates : null;
-      directMedia.videos = json.media.video_versions;
-      hash.directMedia = directMedia;
+      hash.directMedia = {
+        mediaType: json.media.media_type;
+        images: json.media.image_versions2 ? json.media.image_versions2.candidates : null;
+        videos: json.media.video_versions;
+      };
     }
     if (hash.type === 'raven_media') {
       hash.type = 'ravenMedia';
-      var directStory = {};
-      directStory.mediaType = json.raven_media.media_type;
-      directStory.images = json.raven_media.image_versions2 ? json.raven_media.image_versions2.candidates : null;
-      directStory.videos = json.raven_media.video_versions;
-      hash.directStory = directStory;
+      hash.directStory = {
+        mediaType: json.raven_media.media_type;
+        images: json.raven_media.image_versions2 ? json.raven_media.image_versions2.candidates : null;
+        videos: json.raven_media.video_versions;
+      };
     }
     if (hash.type === 'media_share') {
       hash.type = 'mediaShare';
