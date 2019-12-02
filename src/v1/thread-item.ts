@@ -27,11 +27,7 @@ export class ThreadItem extends Resource {
     if (hash.type === 'text') {
       hash.text = json.text;
     }
-    if (hash.type === 'media') {
-      hash.media = json.media.image_versions2.candidates;
-    }
     if (hash.type === "media") {
-      hash.media = json.media.image_versions2.candidates;
       var directMedia = {};
       directMedia.mediaType = json.media.media_type;
       directMedia.images = json.media.image_versions2 ? json.media.image_versions2.candidates : null;
