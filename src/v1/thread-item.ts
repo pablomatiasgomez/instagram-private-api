@@ -37,9 +37,9 @@ export class ThreadItem extends Resource {
     if (hash.type === 'raven_media') {
       hash.type = 'ravenMedia';
       hash.directStory = {
-        mediaType: json.raven_media.media_type,
-        images: json.raven_media.image_versions2 ? json.raven_media.image_versions2.candidates : null,
-        videos: json.raven_media.video_versions,
+        mediaType: json.visual_media.media.media_type,
+        images: json.visual_media.media.image_versions2 ? json.visual_media.media.image_versions2.candidates : null,
+        videos: json.visual_media.media.video_versions,
       };
     }
     if (hash.type === 'media_share') {
